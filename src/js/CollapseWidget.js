@@ -1,14 +1,17 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 export default class CollapseWidget {
     constructor(container) {
       this.container = container;
     }
-  
+
     init() {
       this.bindToDOM();
       this.initElements();
       this.registerListeners();
     }
-  
+
     // eslint-disable-next-line class-methods-use-this
     createMarkup() {
       return `      
@@ -23,26 +26,26 @@ export default class CollapseWidget {
           </div> 
       `;
     }
-  
+
     bindToDOM() {
       this.container.insertAdjacentHTML('beforeend', this.createMarkup());
     }
-  
+
     initElements() {
       this.btn = document.querySelector('.collapse-btn');
       this.content = document.querySelector('.collapse-content');
     }
-  
+
     registerListeners() {
       this.btn.addEventListener('click', () => this.onClick());
       this.content.addEventListener('transitionend', (event) => this.onTransitionEnd(event));
       this.content.addEventListener('transitionstart', (event) => this.onTransitionStart(event));
     }
-  
+
     onClick() {
       this.content.classList.toggle('collapse-hidden');
     }
-  
+
     // eslint-disable-next-line class-methods-use-this
     onTransitionEnd(event) {
       if (event.target.classList.contains('collapse-hidden')) {
@@ -50,7 +53,7 @@ export default class CollapseWidget {
         event.target.style.borderWidth = '0px';
       }
     }
-  
+
     // eslint-disable-next-line class-methods-use-this
     onTransitionStart(event) {
       if (!event.target.classList.contains('collapse-hidden')) {
@@ -59,4 +62,3 @@ export default class CollapseWidget {
       }
     }
   }
-  

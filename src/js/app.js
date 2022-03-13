@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import WidgetsManager from './WidgetsManager';
 import CollapseWidget from './CollapseWidget';
 import CallbackChatWidget from './CallbackChatWidget';

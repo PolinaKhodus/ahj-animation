@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -40,9 +41,9 @@ module.exports = {
         use: [
           {
             loader: 'url-loader',
-            options:{
-	      limit: 10000,
-            }
+            options: {
+              limit: 10000,
+            },
           },
         ],
       },
@@ -52,18 +53,18 @@ module.exports = {
 
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: './src/index.html',
+      filename: './index.html',
     }),
 
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    })	
+    }),
   ],
 
   devServer: {
-   contentBase: path.join(__dirname, 'src'),
-   open: true,
-   port: 9000,
+    contentBase: path.join(__dirname, 'src'),
+    open: true,
+    port: 9000,
   },
-}
+};
